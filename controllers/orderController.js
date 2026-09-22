@@ -337,7 +337,7 @@ const createOrder = async (req, res) => {
 
     if (payment_method === "Midtrans Payment Gateway") {
       console.log("Processing Midtrans Payment Gateway integration.");
-      finalInvoiceNumber = "POS-ST-JANI-" + Date.now(); // Ensure invoice number is set for Midtrans
+      finalInvoiceNumber = "POS-ST-ORVIN-" + Date.now(); // Ensure invoice number is set for Midtrans
       try {
         const grossAmount = req.body.gross_amount
           ? parseInt(req.body.gross_amount, 10)
@@ -348,7 +348,7 @@ const createOrder = async (req, res) => {
         const midtransData = JSON.stringify({
           transaction_details: {
             order_id: finalInvoiceNumber,
-            // "order_id": "POS-ST-JANI-" + Date.now(),
+            // "order_id": "POS-ST-ORVIN-" + Date.now(),
             gross_amount: grossAmount,
           },
           credit_card: {
